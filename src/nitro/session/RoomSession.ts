@@ -156,9 +156,10 @@ export class RoomSession extends Disposable implements IRoomSession
     public sendWhisperMessage(recipientName: string, text: string, styleId: number): void
     {
         this._connection.send(new RoomUnitChatWhisperComposer(recipientName, text, styleId));
-        this._connection.send(new RoomUnitChatGroupWhisperComposer(recipientName));
+       // this._connection.send(new RoomUnitChatGroupWhisperComposer(recipientName));
 
     }
+  
 
     public sendChatTypingMessage(isTyping: boolean): void
     {
@@ -174,6 +175,12 @@ export class RoomSession extends Disposable implements IRoomSession
     public sendDanceMessage(danceId: number): void
     {
         this._connection.send(new RoomUnitDanceComposer(danceId));
+    }
+    
+    public sendWhisperGroupMessage(recipientName: string): void
+    {
+        this._connection.send(new RoomUnitChatGroupWhisperComposer(recipientName));
+
     }
 
     public sendExpressionMessage(expression: number): void
