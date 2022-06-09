@@ -33,6 +33,7 @@ import { RoomSessionEvent } from './events/RoomSessionEvent';
 import { IRoomSession } from './IRoomSession';
 import { UserDataManager } from './UserDataManager';
 
+
 export class RoomSession extends Disposable implements IRoomSession
 {
     private _connection: IConnection;
@@ -74,7 +75,7 @@ export class RoomSession extends Disposable implements IRoomSession
 
         this._moderationSettings = null;
     }
-
+   
     protected onDispose(): void
     {
         if(this._userData)
@@ -156,10 +157,14 @@ export class RoomSession extends Disposable implements IRoomSession
     public sendWhisperMessage(recipientName: string, text: string, styleId: number): void
     {
         this._connection.send(new RoomUnitChatWhisperComposer(recipientName, text, styleId));
-       // this._connection.send(new RoomUnitChatGroupWhisperComposer(recipientName));
+
 
     }
-  
+    public sendGroupWhisperMessage(recipientName: string): void
+    {
+        this._connection.send(new RoomUnitChatGroupWhisperComposer(recipientName));
+
+    }
 
     public sendChatTypingMessage(isTyping: boolean): void
     {
@@ -177,11 +182,7 @@ export class RoomSession extends Disposable implements IRoomSession
         this._connection.send(new RoomUnitDanceComposer(danceId));
     }
     
-    public sendWhisperGroupMessage(recipientName: string): void
-    {
-        this._connection.send(new RoomUnitChatGroupWhisperComposer(recipientName));
-
-    }
+   
 
     public sendExpressionMessage(expression: number): void
     {

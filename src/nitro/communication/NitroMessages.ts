@@ -475,6 +475,8 @@ import { UserSettingsRoomInvitesComposer } from './messages/outgoing/user/settin
 import { UserSettingsSoundComposer } from './messages/outgoing/user/settings/UserSettingsSoundComposer';
 import { UserRespectComposer } from './messages/outgoing/user/UserRespectComposer';
 
+
+
 export class NitroMessages implements IMessageConfiguration
 {
     private _events: Map<number, Function>;

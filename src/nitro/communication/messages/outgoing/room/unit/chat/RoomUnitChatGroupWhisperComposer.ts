@@ -6,7 +6,7 @@ export class RoomUnitChatGroupWhisperComposer implements IMessageComposer<[ stri
 
     constructor(recipientName: string)
     {
-        this._data = [ recipientName  ];
+        this._data = [ recipientName ];
     }
 
     public getMessageArray()
