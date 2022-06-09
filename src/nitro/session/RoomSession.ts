@@ -16,6 +16,7 @@ import { MoodlightSettingsSaveComposer } from '../communication/messages/outgoin
 import { MoodlightTogggleStateComposer } from '../communication/messages/outgoing/room/furniture/dimmer/MoodlightTogggleStateComposer';
 import { OpenPresentComposer } from '../communication/messages/outgoing/room/furniture/presents/OpenPresentComposer';
 import { RoomUnitChatComposer } from '../communication/messages/outgoing/room/unit/chat/RoomUnitChatComposer';
+import { RoomUnitChatGroupWhisperComposer } from '../communication/messages/outgoing/room/unit/chat/RoomUnitChatGroupWhisperComposer';
 import { RoomUnitChatShoutComposer } from '../communication/messages/outgoing/room/unit/chat/RoomUnitChatShoutComposer';
 import { RoomUnitChatWhisperComposer } from '../communication/messages/outgoing/room/unit/chat/RoomUnitChatWhisperComposer';
 import { RoomUnitTypingStartComposer } from '../communication/messages/outgoing/room/unit/chat/RoomUnitTypingStartComposer';
@@ -155,6 +156,8 @@ export class RoomSession extends Disposable implements IRoomSession
     public sendWhisperMessage(recipientName: string, text: string, styleId: number): void
     {
         this._connection.send(new RoomUnitChatWhisperComposer(recipientName, text, styleId));
+        this._connection.send(new RoomUnitChatGroupWhisperComposer(recipientName));
+
     }
 
     public sendChatTypingMessage(isTyping: boolean): void

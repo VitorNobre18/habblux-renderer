@@ -21,6 +21,7 @@
     "postinstall": "node ./post-install.js"
   },
   "dependencies": {
+    "@nitrots/nitro-renderer": "^1.2.6",
     "@pixi/app": "^6.3.0",
     "@pixi/basis": "^6.3.0",
     "@pixi/canvas-display": "^6.3.0",
