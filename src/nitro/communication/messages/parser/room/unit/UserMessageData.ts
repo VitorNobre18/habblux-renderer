@@ -14,6 +14,7 @@ export class UserMessageData
     private _figure: string = '';
     private _custom: string = '';
     private _activityPoints: number = 0;
+    private _banner: string = '0';
     private _webID: number = 0;
     private _groupID: number = 0;
     private _groupStatus: number = 0;
@@ -176,6 +177,19 @@ export class UserMessageData
         if(!this._isReadOnly)
         {
             this._activityPoints = k;
+        }
+    }
+
+    public get banner(): string
+    {
+        return this._banner;
+    }
+
+    public set banner(k: string)
+    {
+        if(!this._isReadOnly)
+        {
+            this._banner = k;
         }
     }
 
