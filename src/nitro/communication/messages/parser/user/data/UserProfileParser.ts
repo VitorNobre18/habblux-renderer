@@ -7,6 +7,7 @@ export class UserProfileParser implements IMessageParser
     private _username: string;
     private _figure: string;
     private _motto: string;
+    private _banner: string;
     private _registration: string;
     private _achievementPoints: number;
     private _friendsCount: number;
@@ -23,6 +24,7 @@ export class UserProfileParser implements IMessageParser
         this._username = null;
         this._figure = null;
         this._motto = null;
+        this._banner = null;
         this._registration = null;
         this._achievementPoints = 0;
         this._friendsCount = 0;
@@ -44,6 +46,7 @@ export class UserProfileParser implements IMessageParser
         this._username = wrapper.readString();
         this._figure = wrapper.readString();
         this._motto = wrapper.readString();
+        this._banner = wrapper.readString();
         this._registration = wrapper.readString();
         this._achievementPoints = wrapper.readInt();
         this._friendsCount = wrapper.readInt();
@@ -81,6 +84,10 @@ export class UserProfileParser implements IMessageParser
     public get motto(): string
     {
         return this._motto;
+    }
+    public get banner(): string
+    {
+        return this._banner;
     }
 
     public get registration(): string

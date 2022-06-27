@@ -16,7 +16,7 @@ export class RoomUnitInfoParser implements IMessageParser
         this._gender = 'M';
         this._motto = null;
         this._achievementScore = 0;
-        this._banner = '0';
+        this._banner = null;
 
         return true;
     }
