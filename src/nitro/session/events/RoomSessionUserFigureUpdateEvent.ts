@@ -22,6 +22,7 @@ export class RoomSessionUserFigureUpdateEvent extends RoomSessionEvent
         this._customInfo = customInfo;
         this._achievementScore = achievementScore;
         this._banner = banner;
+
     }
 
     public get roomIndex(): number
@@ -48,6 +49,7 @@ export class RoomSessionUserFigureUpdateEvent extends RoomSessionEvent
     {
         return this._achievementScore;
     }
+
     public get banner(): string
     {
         return this._banner;

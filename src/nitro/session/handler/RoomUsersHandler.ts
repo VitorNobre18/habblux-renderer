@@ -116,8 +116,10 @@ export class RoomUsersHandler extends BaseHandler
 
         session.userDataManager.updateFigure(parser.unitId, parser.figure, parser.gender, false, false);
         session.userDataManager.updateMotto(parser.unitId, parser.motto);
-        session.userDataManager.updateBanner(parser.unitId, parser.banner);
+
         session.userDataManager.updateAchievementScore(parser.unitId, parser.achievementScore);
+
+        session.userDataManager.updateBanner(parser.unitId, parser.banner);
 
         this.listener.events.dispatchEvent(new RoomSessionUserFigureUpdateEvent(session, parser.unitId, parser.figure, parser.gender, parser.motto, parser.achievementScore, parser.banner));
 

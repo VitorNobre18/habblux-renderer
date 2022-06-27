@@ -14,7 +14,7 @@ export class UserMessageData
     private _figure: string = '';
     private _custom: string = '';
     private _activityPoints: number = 0;
-    private _banner: string = '0';
+    private _banner: string = '';
     private _webID: number = 0;
     private _groupID: number = 0;
     private _groupStatus: number = 0;
@@ -179,7 +179,6 @@ export class UserMessageData
             this._activityPoints = k;
         }
     }
-
     public get banner(): string
     {
         return this._banner;

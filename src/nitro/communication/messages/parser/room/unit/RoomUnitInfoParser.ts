@@ -9,6 +9,7 @@ export class RoomUnitInfoParser implements IMessageParser
     private _achievementScore: number;
     private _banner: string;
 
+
     public flush(): boolean
     {
         this._unitId = null;
@@ -59,8 +60,10 @@ export class RoomUnitInfoParser implements IMessageParser
     {
         return this._achievementScore;
     }
+
     public get banner(): string
     {
         return this._banner;
     }
+  
 }

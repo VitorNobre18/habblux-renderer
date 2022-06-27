@@ -192,6 +192,7 @@ export class UserDataManager extends Disposable
         userData.banner = banner;
     }
 
+
     public updatePetLevel(roomIndex: number, level: number): void
     {
         const userData = this.getUserDataByIndex(roomIndex);
