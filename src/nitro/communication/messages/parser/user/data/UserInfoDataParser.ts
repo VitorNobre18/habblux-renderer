@@ -7,7 +7,6 @@ export class UserInfoDataParser
     private _figure: string;
     private _gender: string;
     private _motto: string;
-    private _banner: string;
     private _realName: string;
     private _directMail: boolean;
     private _respectsReceived: number;
@@ -33,7 +32,6 @@ export class UserInfoDataParser
         this._figure = null;
         this._gender = null;
         this._motto = null;
-        this._banner = null;
         this._realName = null;
         this._directMail = false;
         this._respectsReceived = 0;
@@ -56,7 +54,6 @@ export class UserInfoDataParser
         this._figure = wrapper.readString();
         this._gender = wrapper.readString();
         this._motto = wrapper.readString();
-        this._banner = wrapper.readString();
         this._realName = wrapper.readString();
         this._directMail = wrapper.readBoolean();
         this._respectsReceived = wrapper.readInt();
@@ -94,11 +91,7 @@ export class UserInfoDataParser
     {
         return this._motto;
     }
-    public get banner(): string
-    {
-        return this._banner;
-    }
-
+  
     public get realName(): string
     {
         return this._realName;

@@ -10,9 +10,8 @@ export class RoomSessionUserFigureUpdateEvent extends RoomSessionEvent
     private _gender: string = '';
     private _customInfo: string = '';
     private _achievementScore: number;
-    private _banner: string = '';
 
-    constructor(session: IRoomSession, roomIndex: number, figure: string, gender: string, customInfo: string, achievementScore: number, banner: string)
+    constructor(session: IRoomSession, roomIndex: number, figure: string, gender: string, customInfo: string, achievementScore: number)
     {
         super(RoomSessionUserFigureUpdateEvent.USER_FIGURE, session);
 
@@ -21,7 +20,7 @@ export class RoomSessionUserFigureUpdateEvent extends RoomSessionEvent
         this._gender = gender;
         this._customInfo = customInfo;
         this._achievementScore = achievementScore;
-        this._banner = banner;
+
 
     }
 
@@ -50,8 +49,4 @@ export class RoomSessionUserFigureUpdateEvent extends RoomSessionEvent
         return this._achievementScore;
     }
 
-    public get banner(): string
-    {
-        return this._banner;
-    }
 }
